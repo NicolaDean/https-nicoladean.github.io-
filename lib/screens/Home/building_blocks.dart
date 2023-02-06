@@ -75,8 +75,8 @@ Widget getAboutMe() {
       SizedBox(
         height: 10,
       ),
-      Text(style: TextStyle(fontSize: 20), App_IT.about_me_subtitle),
-      Text(textAlign: TextAlign.justify, App_IT.about_me_body),
+      SelectableText(style: TextStyle(fontSize: 20), App_IT.about_me_subtitle),
+      SelectableText(textAlign: TextAlign.justify, App_IT.about_me_body),
     ]),
   );
 }

@@ -5,6 +5,7 @@ import 'screens/Home/home.dart';
 
 //UTILS
 import 'utils/responsive-manager.dart';
+import './navigation/navigation_settings.dart';
 
 //MODELS
 import './models/Experience.dart';
@@ -33,7 +34,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepOrange,
       ),
-      home: Home(),
+      initialRoute: routes_initial_setting,
+      routes: routes_settings,
     );
   }
 }

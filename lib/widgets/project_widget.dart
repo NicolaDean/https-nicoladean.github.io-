@@ -23,8 +23,8 @@ class Project extends StatelessWidget {
         children: [
           ListTile(
             leading: Icon(Icons.arrow_drop_down_circle),
-            title: Text(model.name),
-            subtitle: Text(
+            title: SelectableText(model.name),
+            subtitle: SelectableText(
               model.tags,
               style: TextStyle(color: Colors.black.withOpacity(0.6)),
             ),
@@ -32,7 +32,7 @@ class Project extends StatelessWidget {
           my_image,
           Padding(
             padding: const EdgeInsets.all(12.0),
-            child: Text(
+            child: SelectableText(
               model.short_explanation,
               style: TextStyle(color: Colors.black.withOpacity(0.6)),
             ),

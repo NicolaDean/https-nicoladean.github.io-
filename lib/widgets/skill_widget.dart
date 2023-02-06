@@ -15,7 +15,7 @@ class Skill extends StatelessWidget {
           color: Colors.deepOrange,
           border: Border.all(color: Colors.deepOrange),
           borderRadius: BorderRadius.all(Radius.circular(400))),
-      child: Text(textAlign: TextAlign.center, this.name),
+      child: SelectableText(textAlign: TextAlign.center, this.name),
     );
   }
 }
