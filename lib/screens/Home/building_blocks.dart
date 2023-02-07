@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/strings.dart';
+import 'package:go_router/go_router.dart';
+import '../../constants/navigations.dart';
 
-void pippo() {}
 //---------------------------------------------------------------------------------
 //---------------------Actions Navigation Logic------------------------------------
 //---------------------------------------------------------------------------------
-List<Widget> getHomeActions() {
+List<Widget> getHomeActions(context) {
+  BuildContext ctx = context;
   return [
-    TextButton(onPressed: () => {}, child: const Text("Home")),
-    TextButton(onPressed: () => {}, child: const Text("About")),
+    TextButton(
+        onPressed: () => ctx.go(routes.initial_setting),
+        child: const Text("Home")),
+    TextButton(
+        onPressed: () => context.go('/project'), child: const Text("Project")),
     TextButton(onPressed: () => {}, child: const Text("Contacts")),
   ];
 }

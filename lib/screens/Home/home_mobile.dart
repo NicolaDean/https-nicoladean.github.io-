@@ -12,8 +12,8 @@ class Home_Mobile extends Home_Desktop {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: _getAppBar(),
-        drawer: _getDrawerMenu(),
+        appBar: _getAppBar(context),
+        drawer: _getDrawerMenu(context),
         body: SingleChildScrollView(
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -22,14 +22,14 @@ class Home_Mobile extends Home_Desktop {
                 children: [_getBody()])));
   }
 
-  Drawer _getDrawerMenu() {
+  Drawer _getDrawerMenu(context) {
     return Drawer(
         child: ListView(
             padding: const EdgeInsets.all(20),
-            children: home.getHomeActions()));
+            children: home.getHomeActions(context)));
   }
 
-  AppBar _getAppBar() {
+  AppBar _getAppBar(context) {
     return AppBar(
       title: home.buildTitle(),
       titleSpacing: 20.0,

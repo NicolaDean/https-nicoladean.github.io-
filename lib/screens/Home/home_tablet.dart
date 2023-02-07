@@ -12,7 +12,7 @@ class Home_tablet extends Home_Desktop {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: _getAppBar(),
+        appBar: _getAppBar(context),
         body: SingleChildScrollView(
             child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -21,13 +21,13 @@ class Home_tablet extends Home_Desktop {
                 children: [_getBody()])));
   }
 
-  AppBar _getAppBar() {
+  AppBar _getAppBar(context) {
     return AppBar(
       title: home.buildTitle(),
       titleSpacing: 20.0,
       backgroundColor: Colors.transparent,
       elevation: 0.0,
-      actions: home.getHomeActions(),
+      actions: home.getHomeActions(context),
     );
   }
 

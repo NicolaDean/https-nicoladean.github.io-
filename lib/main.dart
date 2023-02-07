@@ -10,6 +10,8 @@ import './navigation/navigation_settings.dart';
 //MODELS
 import './models/Experience.dart';
 
+import 'package:go_router/go_router.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Nicola Dean Portfolio',
       theme: ThemeData(
         // This is the theme of your application.
@@ -34,8 +36,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepOrange,
       ),
-      initialRoute: routes_initial_setting,
-      routes: routes_settings,
+      routerConfig: router_config,
     );
   }
 }
