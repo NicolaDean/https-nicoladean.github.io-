@@ -20,7 +20,8 @@ class Project extends StatelessWidget {
 
     return GestureDetector(
         onTap: () => context.goNamed('project', extra: model), //
-        child: Card(
+        child: Expanded(
+            child: Card(
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: [
@@ -40,9 +41,12 @@ class Project extends StatelessWidget {
                   style: TextStyle(color: Colors.black.withOpacity(0.6)),
                 ),
               ),
+              ElevatedButton(
+                  onPressed: () => context.goNamed('project', extra: model),
+                  child: Text("Learn More"))
             ],
           ),
-        ));
+        )));
   }
 }
 
