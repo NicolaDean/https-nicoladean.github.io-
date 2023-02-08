@@ -5,15 +5,17 @@ import '../../utils/responsive-manager.dart';
 //WIDGETS
 import '../../widgets/responsive_layout.dart';
 import '../../widgets/project_widget.dart';
+import 'project_detail.dart';
+
 import '../NavigationBar/navigation_bar.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/models/Project_model.dart';
 
-class ProjectDetail_Desktop extends StatelessWidget {
-  Project_model detail;
+import '../../constants/theme.dart';
 
-  ProjectDetail_Desktop({super.key, required this.detail}) {}
+class ProjectDetail_Desktop extends ProjectDetail {
+  ProjectDetail_Desktop({super.key, required super.detail}) {}
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,7 @@ class ProjectDetail_Desktop extends StatelessWidget {
       appBar: MyNavigationBar.getAppBar(context),
       body: Container(
         color: Colors.deepPurple[600],
-        child: Project(model: detail),
+        child: getBody(),
       ),
     );
   }
