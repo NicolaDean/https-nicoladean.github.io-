@@ -25,8 +25,8 @@ class ProjectDetail extends StatelessWidget {
 
     ResponsiveManager.setConfiguration(context);
     return ResponsiveLayout(
-        mobileScreen: ProjectDetail_Mobile(),
+        mobileScreen: ProjectDetail_Mobile(detail: detail),
         desktopScreen: ProjectDetail_Desktop(detail: detail),
-        tabletScreen: ProjectDetail_Tablet());
+        tabletScreen: ProjectDetail_Tablet(detail: detail));
   }
 }

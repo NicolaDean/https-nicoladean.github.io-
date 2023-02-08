@@ -20,8 +20,7 @@ class Project extends StatelessWidget {
 
     return GestureDetector(
         onTap: () => context.goNamed('project', extra: model), //
-        child: Expanded(
-            child: Card(
+        child: Card(
           clipBehavior: Clip.antiAlias,
           child: Column(
             children: [
@@ -46,7 +45,7 @@ class Project extends StatelessWidget {
                   child: Text("Learn More"))
             ],
           ),
-        )));
+        ));
   }
 }
 

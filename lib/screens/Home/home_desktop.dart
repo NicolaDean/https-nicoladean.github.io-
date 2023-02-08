@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'building_blocks.dart' as home;
 import '../../widgets/skill_widget.dart';
 import '../../widgets/project_widget.dart';
+import '../NavigationBar/navigation_bar.dart';
+
 import '../ProjectDetail/project_detail.dart';
 import 'package:go_router/go_router.dart';
 
@@ -17,7 +19,7 @@ class Home_Desktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: _getAppBar(context),
+        appBar: MyNavigationBar.getAppBar(context),
         body: SingleChildScrollView(
             child: Column(
                 mainAxisSize: MainAxisSize.min,

@@ -4,6 +4,7 @@ import 'package:portfolio/widgets/project_widget.dart';
 
 //WIDGETS
 import 'building_blocks.dart' as home;
+import '../NavigationBar/navigation_bar.dart';
 //CONSTANTS
 import '../../constants/strings.dart';
 
@@ -12,8 +13,8 @@ class Home_Mobile extends Home_Desktop {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: _getAppBar(context),
-        drawer: _getDrawerMenu(context),
+        appBar: MyNavigationBar.getAppBarMobile(),
+        drawer: MyNavigationBar.getDrawer(context),
         body: SingleChildScrollView(
             child: Column(
                 mainAxisSize: MainAxisSize.min,

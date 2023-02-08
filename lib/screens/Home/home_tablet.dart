@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 //WIDGETS
 import 'building_blocks.dart' as home;
 import 'home_desktop.dart';
+import '../NavigationBar/navigation_bar.dart';
 
 //CONSTANTS
 import '../../constants/strings.dart';
@@ -12,7 +13,7 @@ class Home_tablet extends Home_Desktop {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.transparent,
-        appBar: _getAppBar(context),
+        appBar: MyNavigationBar.getAppBar(context),
         body: SingleChildScrollView(
             child: Column(
                 mainAxisSize: MainAxisSize.min,
