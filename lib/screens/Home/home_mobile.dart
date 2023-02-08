@@ -23,22 +23,6 @@ class Home_Mobile extends Home_Desktop {
                 children: [_getBody()])));
   }
 
-  Drawer _getDrawerMenu(context) {
-    return Drawer(
-        child: ListView(
-            padding: const EdgeInsets.all(20),
-            children: home.getHomeActions(context)));
-  }
-
-  AppBar _getAppBar(context) {
-    return AppBar(
-      title: home.buildTitle(),
-      titleSpacing: 20.0,
-      backgroundColor: Colors.transparent,
-      elevation: 0.0,
-    );
-  }
-
   Widget _getBody() {
     return Container(
       child: Padding(

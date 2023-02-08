@@ -7,14 +7,16 @@ import '../../constants/navigations.dart';
 
 //WIDGETS
 import '../../widgets/responsive_layout.dart';
+import '../../constants/theme.dart';
 
 class MyNavigationBar {
   static AppBar getAppBar(BuildContext context) {
     return AppBar(
       title: buildTitle(),
       titleSpacing: 20.0,
-      backgroundColor: Colors.transparent,
-      elevation: 0.0,
+      backgroundColor: myColors.appBar,
+      //elevation: 0.0,
+      shadowColor: myColors.appBar,
       actions: getHomeActions(context),
     );
   }

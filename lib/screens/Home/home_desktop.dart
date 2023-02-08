@@ -28,16 +28,6 @@ class Home_Desktop extends StatelessWidget {
                 children: [_getBody()])));
   }
 
-  AppBar _getAppBar(context) {
-    return AppBar(
-      title: home.buildTitle(),
-      titleSpacing: 20.0,
-      backgroundColor: Colors.transparent,
-      elevation: 0.0,
-      actions: home.getHomeActions(context),
-    );
-  }
-
   Widget _getBody() {
     return Container(
       child: Padding(
@@ -55,7 +45,7 @@ class Home_Desktop extends StatelessWidget {
   Widget _getBodyColumnLeft() {
     return Flexible(
       fit: FlexFit.tight,
-      flex: 3,
+      flex: 4,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         home.getAboutMe(),
         SizedBox(
@@ -69,22 +59,16 @@ class Home_Desktop extends StatelessWidget {
   Widget _getBodyColumnRight() {
     return Flexible(
       fit: FlexFit.tight,
-      flex: 2,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        Container(
-          child: home.ImagePortrait(),
-        )
-      ]),
+      flex: 3,
+      child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [home.ImagePortrait(), _getSkills()]),
     );
   }
 
   Widget getSkillAndExperiences() {
     return Row(children: [
-      Flexible(
-          fit: FlexFit.tight, flex: 2, child: Container(child: _getSkills())),
-      Spacer(
-        flex: 1,
-      ),
       Flexible(
           fit: FlexFit.tight, flex: 2, child: Container(child: getProjects()))
     ]);
@@ -93,7 +77,11 @@ class Home_Desktop extends StatelessWidget {
   Widget _getSkills() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [_getSkillTitle(), SizedBox(height: 20), SkillsContainer()],
+      children: [
+        _getSkillTitle(),
+        SizedBox(height: 20),
+        SkillAdvancedContainer()
+      ],
     );
   }
 

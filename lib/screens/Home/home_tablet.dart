@@ -22,16 +22,6 @@ class Home_tablet extends Home_Desktop {
                 children: [_getBody()])));
   }
 
-  AppBar _getAppBar(context) {
-    return AppBar(
-      title: home.buildTitle(),
-      titleSpacing: 20.0,
-      backgroundColor: Colors.transparent,
-      elevation: 0.0,
-      actions: home.getHomeActions(context),
-    );
-  }
-
   @override
   Widget _getBody() {
     return Container(

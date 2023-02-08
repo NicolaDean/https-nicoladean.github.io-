@@ -1,6 +1,35 @@
 import 'package:flutter/material.dart';
 
 import '../constants/skills.dart';
+import '../constants/theme.dart';
+
+class Skill_model {
+  String name;
+  String shortDescription;
+  String fullDescription;
+  Icon? customIcon;
+
+  Skill_model(
+      this.name, this.shortDescription, this.fullDescription, this.customIcon);
+}
+
+List<Skill_model> skills_advanced = [
+  Skill_model(
+      "C , C++",
+      "I've worked on multiple project involving low level programming on various scenario. Eg: Vulkan game engine, STM32 microcontroller, CUDA accelerator....",
+      "",
+      Icon(Icons.abc)),
+  Skill_model(
+      "Tensorflow , Keras",
+      "I've worked on multiple project involving low level programming on various scenario. Eg: Vulkan game engine, STM32 microcontroller, CUDA accelerator....",
+      "",
+      Icon(Icons.abc)),
+  Skill_model(
+      "React , Flutter",
+      "I've worked on multiple project involving low level programming on various scenario. Eg: Vulkan game engine, STM32 microcontroller, CUDA accelerator....",
+      "",
+      Icon(Icons.mobile_friendly)),
+];
 
 class Skill extends StatelessWidget {
   final String name;
@@ -38,6 +67,40 @@ class SkillsContainer extends StatelessWidget {
         itemCount: skills.length,
         itemBuilder: (BuildContext context, int index) {
           return Skill(name: skills[index]);
+        });
+  }
+}
+
+class SkillAdvanced extends StatelessWidget {
+  final Skill_model skill;
+
+  const SkillAdvanced({super.key, required this.skill});
+
+  @override
+  Widget build(BuildContext context) {
+    return ExpansionTile(
+      title: Text(skill.name, style: TextStyle(color: myColors.secondary)),
+      subtitle: Text(skill.shortDescription),
+      trailing:
+          skill.customIcon ?? Icon(Icons.abc), //If skill.customIcon not null
+      children: <Widget>[
+        ListTile(title: Text(skill.fullDescription)),
+      ],
+    );
+  }
+}
+
+class SkillAdvancedContainer extends StatelessWidget {
+  const SkillAdvancedContainer({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+        scrollDirection: Axis.vertical,
+        shrinkWrap: true,
+        itemCount: skills_advanced.length,
+        itemBuilder: (BuildContext context, int index) {
+          return SkillAdvanced(skill: skills_advanced[index]);
         });
   }
 }

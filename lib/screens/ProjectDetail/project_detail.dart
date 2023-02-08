@@ -29,4 +29,16 @@ class ProjectDetail extends StatelessWidget {
         desktopScreen: ProjectDetail_Desktop(detail: detail),
         tabletScreen: ProjectDetail_Tablet(detail: detail));
   }
+
+  Widget getBody() {
+    return Card(
+      child: Column(children: [
+        ListTile(
+          leading: Icon(Icons.smart_toy_outlined),
+          title: Text("DL Challenges"),
+          subtitle: Text("Keras , Tensorflow"),
+        )
+      ]),
+    );
+  }
 }

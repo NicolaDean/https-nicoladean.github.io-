@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../constants/strings.dart';
 import 'package:go_router/go_router.dart';
 import '../../constants/navigations.dart';
+import '../../constants/theme.dart';
 
 //---------------------------------------------------------------------------------
 //---------------------Actions Navigation Logic------------------------------------
@@ -95,13 +96,15 @@ Widget getAboutMe() {
   height: 300,
 );*/
 
-Image my_image = Image(image: AssetImage('assets/images/my-portrait.jpg'));
+Image my_image = Image(image: AssetImage('images/my-portrait2.jpg'));
 
 Widget ImagePortrait() {
-  return Container(
-    margin: EdgeInsets.all(10),
-    child: Column(children: [
-      my_image,
-    ]),
+  return CircleAvatar(
+    radius: 100,
+    backgroundColor: myColors.secondary,
+    child: CircleAvatar(
+      backgroundImage: AssetImage('images/my-portrait2.jpg'),
+      radius: 95,
+    ),
   );
 }
