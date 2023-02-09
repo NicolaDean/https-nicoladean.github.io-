@@ -23,14 +23,12 @@ class Home extends StatelessWidget {
         tabletScreen: Home_tablet());
   }
 
-  Image my_image = Image(image: AssetImage('images/my-portrait2.jpg'));
-
   Widget ImagePortrait() {
     return CircleAvatar(
       radius: 100,
       backgroundColor: myColors.secondary,
       child: CircleAvatar(
-        backgroundImage: AssetImage('images/my-portrait2.jpg'),
+        backgroundImage: AssetImage('assets/images/my-portrait2.jpg'),
         radius: 95,
       ),
     );
