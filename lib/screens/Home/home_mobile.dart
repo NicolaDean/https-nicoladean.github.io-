@@ -3,7 +3,6 @@ import 'package:portfolio/screens/Home/home_desktop.dart';
 import 'package:portfolio/widgets/project_widget.dart';
 
 //WIDGETS
-import 'building_blocks.dart' as home;
 import '../NavigationBar/navigation_bar.dart';
 //CONSTANTS
 import '../../constants/strings.dart';
@@ -28,14 +27,17 @@ class Home_Mobile extends Home_Desktop {
       child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 20),
           child: Container(
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              home.ImagePortrait(),
-              SizedBox(height: 50),
-              home.getAboutMe(),
-              SizedBox(height: 50),
-              getProjects(),
-            ]),
+            child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ImagePortrait(),
+                  SizedBox(height: 50),
+                  getAboutMe(),
+                  SizedBox(height: 50),
+                  getProjects(),
+                  SizedBox(height: 50),
+                  getSkills(),
+                ]),
           )),
     );
   }

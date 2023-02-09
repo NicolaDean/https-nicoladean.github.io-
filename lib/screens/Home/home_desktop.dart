@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:portfolio/screens/Home/home.dart';
 
 //WIDGETS
-import 'building_blocks.dart' as home;
 import '../../widgets/skill_widget.dart';
 import '../../widgets/project_widget.dart';
 import '../NavigationBar/navigation_bar.dart';
@@ -14,7 +14,7 @@ import 'package:go_router/go_router.dart';
 import '../../constants/strings.dart';
 
 //READ BLOCKS FROM TOP TO BOTTOM
-class Home_Desktop extends StatelessWidget {
+class Home_Desktop extends Home {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,11 +47,11 @@ class Home_Desktop extends StatelessWidget {
       fit: FlexFit.tight,
       flex: 4,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-        home.getAboutMe(),
+        getAboutMe(),
         SizedBox(
           height: 50,
         ),
-        getSkillAndExperiences(),
+        getProjects(),
       ]),
     );
   }
@@ -63,18 +63,44 @@ class Home_Desktop extends StatelessWidget {
       child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [home.ImagePortrait(), _getSkills()]),
+          children: [
+            ImagePortrait(),
+            SizedBox(
+              height: 50,
+            ),
+            getSkills()
+          ]),
     );
   }
 
   Widget getSkillAndExperiences() {
     return Row(children: [
       Flexible(
-          fit: FlexFit.tight, flex: 2, child: Container(child: getProjects()))
+          fit: FlexFit.tight, flex: 2, child: Container(child: getProjects())),
+      Spacer(flex: 1),
+      Flexible(
+          fit: FlexFit.tight, flex: 2, child: Container(child: getSkills()))
     ]);
   }
 
-  Widget _getSkills() {
+  Widget getProjects() {
+    return Row(children: [
+      Flexible(
+          fit: FlexFit.tight,
+          flex: 2,
+          child: Container(
+              child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              getProjectTitle(),
+              SizedBox(height: 20),
+              ProjectContainer()
+            ],
+          )))
+    ]);
+  }
+
+  Widget getSkills() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -82,13 +108,6 @@ class Home_Desktop extends StatelessWidget {
         SizedBox(height: 20),
         SkillAdvancedContainer()
       ],
-    );
-  }
-
-  Widget getProjects() {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [getProjectTitle(), SizedBox(height: 20), ProjectContainer()],
     );
   }
 

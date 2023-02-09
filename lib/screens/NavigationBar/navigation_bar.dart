@@ -51,7 +51,7 @@ class MyNavigationBar {
 
   static Widget buildTitle() {
     return RichText(
-      text: const TextSpan(
+      text: TextSpan(
         // Note: Styles for TextSpans must be explicitly defined.
         // Child text spans will inherit styles from parent
         style: TextStyle(
@@ -66,7 +66,7 @@ class MyNavigationBar {
           ),
           TextSpan(
             text: "o",
-            style: TextStyle(color: Colors.deepOrangeAccent),
+            style: TextStyle(color: myColors.primary),
           ),
         ],
       ),

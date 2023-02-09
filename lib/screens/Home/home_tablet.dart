@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/widgets/skill_widget.dart';
 
 //WIDGETS
-import 'building_blocks.dart' as home;
 import 'home_desktop.dart';
 import '../NavigationBar/navigation_bar.dart';
 
@@ -29,11 +29,17 @@ class Home_tablet extends Home_Desktop {
             padding: EdgeInsets.symmetric(horizontal: 20),
             child: Container(
                 child: Column(children: [
-              home.getAboutMe(),
+              Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                ImagePortrait(),
+                SizedBox(
+                  width: 50,
+                ),
+                Flexible(flex: 1, child: getAboutMe())
+              ]),
               SizedBox(
                 height: 50,
               ),
-              getSkillAndExperiences()
+              getSkillAndExperiences(),
             ]))));
   }
 }
