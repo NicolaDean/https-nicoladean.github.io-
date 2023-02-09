@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/constants/projects.dart';
 
 //SCREENS WIDGETS:
 import '../screens/Home/home.dart';
@@ -27,15 +28,26 @@ final GoRouter router_config = GoRouter(routes: <GoRoute>[
 //------------DETAIL-PAGE------------------------------
 //-----------------------------------------------------
 
+//https://pub.dev/documentation/go_router/latest/topics/Configuration-topic.html
+
 pass_args(state) {
-  Project_model p = state.extra as Project_model;
+  print("TRY UPDATING PROJECT PAGE");
+  int id;
+
+  try {
+    id = int.parse((state.params['project_id']));
+  } catch (e) {
+    print("ERRORE URL PROJECT MANCANTE");
+    id = 0;
+  }
+
   return ProjectDetail(
-    detail: p,
+    id: id,
   );
 }
 
 GoRoute details_route = GoRoute(
-  path: 'project',
+  path: 'project/:project_id',
   name: 'project',
   builder: (BuildContext context, GoRouterState state) => pass_args(state),
 );

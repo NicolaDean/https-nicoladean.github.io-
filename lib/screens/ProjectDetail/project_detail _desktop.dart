@@ -15,7 +15,7 @@ import 'package:portfolio/models/Project_model.dart';
 import '../../constants/theme.dart';
 
 class ProjectDetail_Desktop extends ProjectDetail {
-  ProjectDetail_Desktop({super.key, required super.detail}) {}
+  ProjectDetail_Desktop({super.key, required super.id}) {}
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +23,12 @@ class ProjectDetail_Desktop extends ProjectDetail {
       backgroundColor: Colors.transparent,
       appBar: MyNavigationBar.getAppBar(context),
       body: Container(
-        color: Colors.deepPurple[600],
         child: getBody(),
       ),
     );
+  }
+
+  Widget getBody() {
+    return getHeader();
   }
 }

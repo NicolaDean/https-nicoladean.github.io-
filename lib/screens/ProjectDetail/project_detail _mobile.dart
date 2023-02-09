@@ -10,11 +10,10 @@ import '../../widgets/project_widget.dart';
 
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/models/Project_model.dart';
+import 'project_detail.dart';
 
-class ProjectDetail_Mobile extends StatelessWidget {
-  Project_model detail;
-
-  ProjectDetail_Mobile({super.key, required this.detail}) {}
+class ProjectDetail_Mobile extends ProjectDetail {
+  ProjectDetail_Mobile({super.key, required super.id});
 
   @override
   Widget build(BuildContext context) {

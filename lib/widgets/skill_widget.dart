@@ -3,34 +3,6 @@ import 'package:flutter/material.dart';
 import '../constants/skills.dart';
 import '../constants/theme.dart';
 
-class Skill_model {
-  String name;
-  String shortDescription;
-  String fullDescription;
-  Icon? customIcon;
-
-  Skill_model(
-      this.name, this.shortDescription, this.fullDescription, this.customIcon);
-}
-
-List<Skill_model> skills_advanced = [
-  Skill_model(
-      "C , C++",
-      "I've worked on multiple project involving low level programming on various scenario. Eg: Vulkan game engine, STM32 microcontroller, CUDA accelerator....",
-      "",
-      Icon(Icons.abc)),
-  Skill_model(
-      "Tensorflow , Keras",
-      "I've worked on multiple project involving low level programming on various scenario. Eg: Vulkan game engine, STM32 microcontroller, CUDA accelerator....",
-      "",
-      Icon(Icons.abc)),
-  Skill_model(
-      "React , Flutter",
-      "I've worked on multiple project involving low level programming on various scenario. Eg: Vulkan game engine, STM32 microcontroller, CUDA accelerator....",
-      "",
-      Icon(Icons.mobile_friendly)),
-];
-
 class Skill extends StatelessWidget {
   final String name;
 

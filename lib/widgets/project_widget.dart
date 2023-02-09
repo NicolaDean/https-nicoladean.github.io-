@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/Project_model.dart';
+import 'package:portfolio/screens/ProjectDetail/project_detail.dart';
 
 import '../constants/projects.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -19,7 +20,7 @@ class Project extends StatelessWidget {
     );
 
     return GestureDetector(
-        onTap: () => context.goNamed('project', extra: model), //
+        onTap: () => navigate_2(context), //
         child: Card(
           clipBehavior: Clip.antiAlias,
           child: Column(
@@ -41,11 +42,26 @@ class Project extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                  onPressed: () => context.goNamed('project', extra: model),
+                  onPressed: () => navigate_2(context),
                   child: Text("Learn More"))
             ],
           ),
         ));
+  }
+
+  //context.goNamed('project', extra: model),
+  void navigate(BuildContext context, Project_model project) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ProjectDetail(id: project.id),
+        ));
+  }
+
+  void navigate_2(BuildContext context) {
+    print("BANANA");
+    context.go("/project/" + model.id.toString());
+    //context.go(Uri(path: '/project', queryParameters: {'project_id': model.id}).toString());
   }
 }
 
